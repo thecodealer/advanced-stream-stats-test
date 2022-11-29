@@ -19,6 +19,7 @@ class CreateSubscriptionPlansTable extends Migration
             $table->string('billing_cycle', 10)->default('monthly');
             $table->string('currency', 3);
             $table->integer('price');
+            $table->string('external_id', 100)->nullable();
         });
     }
 
