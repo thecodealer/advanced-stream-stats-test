@@ -16,7 +16,8 @@ class CreateSubscriptionPlansTable extends Migration
         Schema::create('subscription_plans', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('cycle', 10)->default('monthly');
+            $table->string('billing_cycle', 10)->default('monthly');
+            $table->string('currency', 3);
             $table->integer('price');
         });
     }
