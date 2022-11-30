@@ -33,6 +33,13 @@ return [
     'google' => [    
         'client_id' => env('GOOGLE_CLIENT_ID'),  
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),  
-        'redirect' => env('GOOGLE_REDIRECT_URI') 
+        'redirect' => env('GOOGLE_REDIRECT_URI'),
     ],
+
+    'braintree' => [
+        'environment' => env('BRAINTREE_ENVIRONMENT', 'sandbox'),
+        'merchant_id' => env('BRAINTREE_MERCHANT_ID'),
+        'public_key' => env('BRAINTREE_PUBLIC_KEY'),
+        'private_key' => env('BRAINTREE_PRIVATE_KEY'),
+    ]
 ];

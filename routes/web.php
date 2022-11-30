@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DefaultController;
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\Auth\GoogleController;
 
 /*
@@ -25,4 +26,10 @@ Route::get('/auth/google/callback', [GoogleController::class, 'callback'])->name
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DefaultController::class, 'dashboard'])->name('dashboard');
     Route::get('/stats', [DefaultController::class, 'stats'])->name('stats');
+    Route::prefix('/subscription')->name('subscription.')->group(function () {
+        Route::get('/', [SubscriptionController::class, 'index'])->name('index');
+        Route::get('payment-token', [SubscriptionController::class, 'paymentToken'])->name('payment.token');
+        Route::post('pay', [SubscriptionController::class, 'pay'])->name('pay');
+        Route::get('cancel', [SubscriptionController::class, 'cancel'])->name('cancel');
+    });
 });

@@ -1,0 +1,60 @@
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid #e4eaf0;
+    display: inline-block;
+}
+
+.left-0 {
+    left: 0;
+}
+
+.top-menu {
+    padding-top: 20px;
+}
+
+.user-menu {
+    text-align: right;
+}
+
+.main-content {
+    min-width: 780px;
+}
+
+.global-progress-loader {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    z-index: 999;
+}
+
+.global-progress-loader.visible {
+    display: flex;
+}
+
+.global-progress-loader .inner {
+    width: 40px;
+}
+
+.global-progress-loader svg {
+    width: 100%;
+}
+
+.payment-wrapper {
+    margin-top: 20px;
+}
+
+.w-f {
+    width: 100%;
+}

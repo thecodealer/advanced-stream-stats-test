@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\SubscriptionPlan;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        SubscriptionPlan::create(['name' => 'Monthly Plan', 'billing_cycle' => 'monthly', 'currency' => 'USD', 'price' => 23.92]);
+        SubscriptionPlan::create(['name' => 'Yearly Plan', 'billing_cycle' => 'yearly', 'currency' => 'USD', 'price' => 199.99]);
     }
 }

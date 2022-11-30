@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubscriptionPlansTable extends Migration
+class CreateBraintreeCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateSubscriptionPlansTable extends Migration
      */
     public function up()
     {
-        Schema::create('subscription_plans', function (Blueprint $table) {
+        Schema::create('braintree_customers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('billing_cycle', 10)->default('monthly');
-            $table->string('currency', 3);
-            $table->decimal('price', 8, 2);
-            $table->string('external_id', 100)->nullable();
+            $table->integer('user_id');
+            $table->string('customer_id', 50);
+            $table->string('plan_id', 50)->nullable();
+            $table->string('subscription_id', 50)->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateSubscriptionPlansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subscription_plans');
+        Schema::dropIfExists('braintree_customers');
     }
 }
