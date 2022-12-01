@@ -25,6 +25,12 @@ class DefaultController extends Controller {
         return view('dashboard');
     }
 
+    public function stats() {
+        $user = Auth::user();
+        $customer = $user->customer;
+        return view('stats')->with(['hasSubscription' => $customer && $customer->plan_id]);
+    }
+
     public function logout(Request $request) {
         Auth::logout();
         $request->session()->invalidate();

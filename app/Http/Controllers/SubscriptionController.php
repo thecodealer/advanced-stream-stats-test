@@ -16,7 +16,7 @@ class SubscriptionController extends Controller {
             return view('no-result')->with(['title' => 'Subscription']);
         }
         $user = Auth::user();
-        return view('subscription')->with(['plans' => $plans, 'plan' => $user->subscription->plan]);
+        return view('subscription')->with(['plans' => $plans, 'plan' => $user->customer->plan ?? null]);
     }
 
     public function paymentToken() {

@@ -42,7 +42,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function subscription() {
+    public function customer() {
         return $this->hasOne(BraintreeCustomer::class);
     }
 }
